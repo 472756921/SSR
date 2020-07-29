@@ -1,0 +1,21 @@
+{
+	"presets": [
+		[
+			"@babel/preset-react",
+			{
+				"useBuiltIns": "usage"
+			}
+		]
+	],
+	"plugins": [
+		[
+			"import",
+			{
+				"libraryName": "antd",
+				"libraryDirectory": "es",
+				"style": "css"
+			}
+		]
+	],
+	"ignore": ["antd", "react", "react-dnd", "react-dnd-html5-backend", "react-dom", "react-router", "react-router-dom"]
+}
