@@ -5,26 +5,26 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = (env, argv) => {
-	return webpackMerge(baseConfig(env, argv), {
-		mode: "production",
-		entry: {
-			main: "./src/app.js",
-		},
-		output: {
-			publicPath: "./",
-			filename: "[name].js",
-			path: path.resolve(__dirname, "../server/dist"),
-		},
-		plugins: [
-			new CleanWebpackPlugin(),
-			new HtmlWebpackPlugin({
-				title: "Benson",
-				template: "./index.html",
-				filename: "index.html",
-			}),
-		],
-		optimization: {
-			usedExports: true, //清除无用JS
-		},
-	});
+  return webpackMerge.merge(baseConfig(env, argv), {
+    mode: "production",
+    entry: {
+      main: "./src/app.js",
+    },
+    output: {
+      publicPath: "./",
+      filename: "[name].js",
+      path: path.resolve(__dirname, "../server/dist"),
+    },
+    plugins: [
+      new CleanWebpackPlugin(),
+      new HtmlWebpackPlugin({
+        title: "Benson",
+        template: "./index.html",
+        filename: "index.html",
+      }),
+    ],
+    optimization: {
+      usedExports: true, //清除无用JS
+    },
+  });
 };
