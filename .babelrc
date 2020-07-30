@@ -1,8 +1,12 @@
 {
-	"presets": [
-		["@babel/preset-react", { "useBuiltIns": "usage" }],
-		["@babel/preset-env", { "useBuiltIns": "usage" }]
-	],
-	"plugins": [["babel-plugin-import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]],
-	"ignore": ["antd", "react", "react-dnd", "react-dnd-html5-backend", "react-dom", "react-router", "react-router-dom"]
+  "presets": [
+    ["@babel/preset-env", { "useBuiltIns": "usage", "corejs": 3 }],
+    ["@babel/preset-react", { "useBuiltIns": "usage" }]
+  ],
+  "plugins": [
+    [
+      "babel-plugin-import",
+      { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }
+    ]
+  ]
 }

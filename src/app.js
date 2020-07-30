@@ -7,13 +7,13 @@ import Login from "./page/login";
 import Home from "./page/home";
 
 render(
-	<ConfigProvider locale={zh_CN}>
-		<BrowserRouter>
-			<Switch>
-				<Route path="/login" component={Login} />
-				<Route path="/home" component={Home} />
-			</Switch>
-		</BrowserRouter>
-	</ConfigProvider>,
-	document.getElementById("root")
+  <ConfigProvider locale={zh_CN}>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/login" component={Login} />
+        <Route path="/home" component={Home} />
+      </Switch>
+    </BrowserRouter>
+  </ConfigProvider>,
+  document.getElementById("root")
 );
