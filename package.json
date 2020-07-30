@@ -7,8 +7,8 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "webpack --mode=production --config webpack/prod.js",
 		"start": "webpack-dev-server --config webpack/dev.js --colors --watch",
-		"server": "node server/index.js",
-		"serverBuild": "webpack --mode=production --config webpack/server.js"
+		"server": "node server/dist/main.js",
+		"serverBuild": "webpack --config webpack/server.js"
 	},
 	"author": "",
 	"license": "ISC",

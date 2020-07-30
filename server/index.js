@@ -7,9 +7,9 @@ const container = renderToString(<Home />);
 
 http.createServer((req, res) => {
 	res.writeHead(200, {
-		"Content-Type": "text/plain",
+		"Content-Type": "text/html",
 	});
-	response.end(`
+	res.end(`
     <!DOCTYPE html>
     <html lang="en">
     <head>
