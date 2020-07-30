@@ -3,6 +3,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
 	mode: "development",
+	target: "node",
 	entry: {
 		main: "./server/index.js",
 	},
@@ -17,20 +18,6 @@ module.exports = {
 				test: /\.js$/,
 				loader: "babel-loader",
 				exclude: /node_modules/,
-				options: {
-					presets: [
-						"react",
-						"stage-0",
-						[
-							"env",
-							{
-								targets: {
-									browsers: ["last 2 versions"],
-								},
-							},
-						],
-					],
-				},
 			},
 		],
 	},

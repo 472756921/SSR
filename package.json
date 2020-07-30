@@ -1,43 +1,43 @@
 {
-  "name": "ssr",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode=production --config webpack/prod.js",
-    "start": "webpack-dev-server --config webpack/dev.js --colors --watch",
-    "server": "node server/index.js",
-    "serverBuild": "webpack --mode=production --config webpack/server.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.10.5",
-    "@babel/polyfill": "^7.10.4",
-    "@babel/preset-env": "^7.10.4",
-    "@babel/preset-react": "^7.10.4",
-    "babel-loader": "^8.1.0",
-    "babel-plugin-import": "^1.13.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "css-loader": "^3.6.0",
-    "html-webpack-plugin": "^4.3.0",
-    "style-loader": "^1.2.1",
-    "url-loader": "^4.1.0",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^5.0.9"
-  },
-  "dependencies": {
-    "antd": "^4.4.3",
-    "core-js": "^3.6.5",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-router-dom": "^5.2.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+	"name": "ssr",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "webpack --mode=production --config webpack/prod.js",
+		"start": "webpack-dev-server --config webpack/dev.js --colors --watch",
+		"server": "node server/dist/main.js",
+		"serverBuild": "webpack --config webpack/server.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.10.5",
+		"@babel/polyfill": "^7.10.4",
+		"@babel/preset-env": "^7.10.4",
+		"@babel/preset-react": "^7.10.4",
+		"@babel/register": "^7.10.5",
+		"babel-loader": "^8.1.0",
+		"babel-plugin-import": "^1.13.0",
+		"clean-webpack-plugin": "^3.0.0",
+		"css-loader": "^3.6.0",
+		"html-webpack-plugin": "^4.3.0",
+		"style-loader": "^1.2.1",
+		"url-loader": "^4.1.0",
+		"webpack": "^4.43.0",
+		"webpack-cli": "^3.3.12",
+		"webpack-dev-server": "^3.11.0",
+		"webpack-merge": "^5.0.9"
+	},
+	"dependencies": {
+		"antd": "^4.4.3",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"react-router-dom": "^5.2.0"
+	},
+	"browserslist": [
+		"> 1%",
+		"not ie <= 8"
+	]
 }
