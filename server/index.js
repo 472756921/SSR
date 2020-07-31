@@ -1,26 +1,14 @@
-const http = require("http");
-const { renderToString } = require("react-dom/server");
-const React = require("react");
-import Home from "../src/page/home";
+const path = require("path");
+const express = require("express");
+const app = express();
+const port = 3000;
 
-const container = renderToString(<Home />);
+const content = require("../dist/server");
 
-http.createServer((req, res) => {
-	res.writeHead(200, {
-		"Content-Type": "text/html",
-	});
-	res.end(`
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Document</title>
-    </head>
-    <body>
-      <div id="root">${container}</div>
-    </body>
-    </html>
-  `);
-}).listen(8888);
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "../"));
+app.get("/", (req, res) => {
+	res.render("index", { content: content.default() });
+});
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
