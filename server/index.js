@@ -1,26 +1,17 @@
-const http = require("http");
-const { renderToString } = require("react-dom/server");
-const React = require("react");
-import Home from "../src/page/home";
+var express = require("express");
+var app = express();
+// const { renderToString } = require("react-dom/server");
+// const React = require("react");
+// import Home from "../src/page/home";
 
-const container = renderToString(<Home />);
+var ejs = require("ejs");
 
-http.createServer((req, res) => {
-	res.writeHead(200, {
-		"Content-Type": "text/html",
-	});
-	res.end(`
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Document</title>
-    </head>
-    <body>
-      <div id="root">${container}</div>
-    </body>
-    </html>
-  `);
-}).listen(8888);
+// const container = renderToString(<Home />);
+
+app.engine("html", ejs.__express);
+app.set("view engine", "html"); //设置视图引擎
+app.use(express.static("../dist"));
+
+app.get("/", (req, res) => res.send("nihao"));
+
+app.listen(8888, () => console.log(`Example app listening on port 8888!`));

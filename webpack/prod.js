@@ -13,13 +13,13 @@ module.exports = (env, argv) => {
     output: {
       publicPath: "./",
       filename: "[name].js",
-      path: path.resolve(__dirname, "../server/dist"),
+      path: path.resolve(__dirname, "../dist"),
     },
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         title: "Benson",
-        template: "./index.html",
+        template: "./src/index.html",
         filename: "index.html",
       }),
     ],
