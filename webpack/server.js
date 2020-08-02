@@ -5,12 +5,13 @@ module.exports = {
 	mode: "development",
 	target: "node",
 	entry: {
-		main: "./server/index.js",
+		main: "./src/app_server.js",
 	},
 	output: {
+		libraryTarget: "commonjs2",
 		publicPath: "./",
-		filename: "[name].js",
-		path: path.resolve(__dirname, "../server/dist"),
+		filename: "server.js",
+		path: path.resolve(__dirname, "../dist"),
 	},
 	module: {
 		rules: [
@@ -18,6 +19,10 @@ module.exports = {
 				test: /\.js$/,
 				loader: "babel-loader",
 				exclude: /node_modules/,
+			},
+			{
+				test: /\.css$/,
+				loader: "ignore-loader",
 			},
 		],
 	},
