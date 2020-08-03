@@ -1,15 +1,13 @@
-import React from "react";
 import { renderToString } from "react-dom/server";
-import { Route, BrowserRouter, Switch } from "react-router-dom";
-import Login from "./page/login";
-import Home from "./page/home";
+import { createElement } from "react";
+import Routes from "./route";
 
 const render = (url) => {
-  let Dom = <Home />;
-  if (url === "/login") {
-    Dom = <Login />;
+  const Dom = Routes.filter((it) => it.path === url);
+  if (Dom.length === 1) {
+    return renderToString(createElement(Dom[0].component));
+  } else {
+    return "404";
   }
-
-  return renderToString(Dom);
 };
 export default render;

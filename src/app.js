@@ -1,15 +1,15 @@
 import React from "react";
 import { render } from "react-dom";
 import { Route, BrowserRouter, Switch } from "react-router-dom";
-import Login from "./page/login";
-import Home from "./page/home";
+import Routes from "./route";
 
 render(
-	<BrowserRouter>
-		<Switch>
-			<Route path="/login" component={Login} />
-			<Route path="/home" component={Home} />
-		</Switch>
-	</BrowserRouter>,
-	document.getElementById("root")
+  <BrowserRouter>
+    <Switch>
+      {Routes.map((it, i) => (
+        <Route key={i} path={it.path} component={it.component} />
+      ))}
+    </Switch>
+  </BrowserRouter>,
+  document.getElementById("root")
 );
