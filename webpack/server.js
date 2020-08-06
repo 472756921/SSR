@@ -11,7 +11,7 @@ module.exports = {
 		libraryTarget: "commonjs2",
 		publicPath: "./",
 		filename: "server.js",
-		path: path.resolve(__dirname, "../dist"),
+		path: path.resolve(__dirname, "../dist_server"),
 	},
 	module: {
 		rules: [
