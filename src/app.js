@@ -13,16 +13,3 @@ render(
 	</BrowserRouter>,
 	document.getElementById("root")
 );
-
-export const renderSSR = (req) => {
-	console.log("123 :>> ", 123);
-	return (
-		<StaticRouter location={req.path}>
-			<Switch>
-				{Routes.map((it, i) => {
-					return <Route path={it.path} component={it.component} key={i} />;
-				})}
-			</Switch>
-		</StaticRouter>
-	);
-};
