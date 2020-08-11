@@ -14,7 +14,7 @@ const { RenderSSR } = require("../src/router");
 
 app.use(express.static("dist"));
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "../"));
+app.set("views", path.join(__dirname, "/"));
 app.get("/*", (req, res) => {
 	res.render("index", {
 		content: renderToString(<RenderSSR req={req} />),
