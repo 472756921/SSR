@@ -1,8 +1,7 @@
 import React from "react";
-import { render } from "react-dom";
+import { hydrate, render } from "react-dom";
 import { Route, BrowserRouter, Switch, StaticRouter } from "react-router-dom";
 import Routes from "./route";
-
 render(
 	<BrowserRouter>
 		<Switch>
